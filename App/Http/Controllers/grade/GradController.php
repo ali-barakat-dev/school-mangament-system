@@ -4,7 +4,7 @@ namespace App\Http\Controllers\Grade;
 
 use App\Http\Controllers\Controller;
 use App\Http\Requests\GradeRequest;
-use App\Models\Classroom;
+use App\Models\ClassRoom;
 use App\Models\Grade;
 use Illuminate\Http\Request;
 use Mcamara\LaravelLocalization\Facades\LaravelLocalization;
@@ -46,7 +46,7 @@ class GradController extends Controller
     }
     function destroy(Request $request, $grade_id)
     {
-        $class_id = Classroom::where('grade_id', $request->id)->pluck('grade_id');
+        $class_id = ClassRoom::where('grade_id', $request->id)->pluck('grade_id');
         if ($class_id->count() == 0) {
 
             $grad = Grade::find($request->id)->delete();
