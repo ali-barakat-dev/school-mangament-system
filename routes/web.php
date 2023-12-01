@@ -40,12 +40,12 @@ Route::group(
         
 
         Route::group(['namespace' => 'grade', 'prefix' => 'classroom'], function () {
-            Route::get('/', 'Classromcontroller@index')->name('class.index');
-            Route::get('creat', 'Classromcontroller@create')->name('class.create');
-            Route::post('store', 'Classromcontroller@store')->name('class.store');
-            Route::get('edit/{class_id}', 'Classromcontroller@edit')->name('class.edit');
-            Route::post('update/{class_id}', 'Classromcontroller@update')->name('class.update');
-            Route::get('/delete/{class_id}', 'Classromcontroller@delete')->name('class.delete');
+            Route::get('/', 'ClassromController@index')->name('class.index');
+            Route::get('creat', 'ClassromController@create')->name('class.create');
+            Route::post('store', 'ClassromController@store')->name('class.store');
+            Route::get('edit/{class_id}', 'ClassromController@edit')->name('class.edit');
+            Route::post('update/{class_id}', 'ClassromController@update')->name('class.update');
+            Route::get('/delete/{class_id}', 'ClassromController@delete')->name('class.delete');
         });
 
         Route::view('/Add_parent', 'livewire.show_form')->name('add.parent');

@@ -6,7 +6,7 @@ use Carbon\Traits\Timestamp;
 use Illuminate\Database\Eloquent\Model;
 
 
-class Classroom extends Model
+class ClassRoom extends Model
 {
     public $fillable = [
         'id',

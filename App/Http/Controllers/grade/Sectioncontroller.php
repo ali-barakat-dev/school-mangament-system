@@ -17,7 +17,7 @@ class SectionController extends Controller
     }
     function create(){
         $grades = Grade::all(); 
-        $classes = Classroom::all();
+        $classes = ClassRoom::all();
            $teacher=Teacher::all();
         return view('section.add_section', compact('grades', 'classes','teacher')); }
     function store(Request $r){

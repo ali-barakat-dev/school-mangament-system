@@ -15,7 +15,7 @@ class Grade extends Model
     public function classes()
     {
 
-        return $this->hasMany(Classroom::class,'id');
+        return $this->hasMany(ClassRoom::class,'id');
 
     }
     //علاقة المراحل الدراسية لجلب الاقسام المتعلقة بكل مرحلة
