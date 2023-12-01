@@ -75,13 +75,21 @@
                                                         </tr>
                                                         </thead>
                                                         <tbody>
-                                                            @foreach ($Grades->Sections as $list_Section)
+                                                         @foreach ($Grade->Section as $list_Section)
                                                             <tr>
-                                                                <td>{{ $list_Section->grade_id }}</td>
-                                                                <td>{{ $list_Section->grade_id }}</td> 
-                                                                <td>{{ $list_Section->my_class->name_class_ar }}</td> 
+                                                                <td>{{ $list_Section->id }}</td>
+                                                                <td>{{ $list_Section->name_ar }}</td>
+                                                                <td>{{ $list_Section->classroom->name_class_ar }}</td> 
                                                                 <td>
-                                                                    <a class="btn btn-info btn-sm" href="">
+                                                                @if ( $list_Section->status =='t')
+                                                                <span class="badge badge-success">{{ $list_Section->status }}</span> 
+                                                                @else
+                                                                <span class="badge badge-danger">{{$list_Section->status }}</span> 
+                                                                    
+                                                                @endif
+                                                                </td>
+                                                                <td> 
+                                                                    <a class="btn btn-info btn-sm" href="{{route('section.edit',$list_Section->id)}}">
                                                                         <i class="fa fa-edit"></i>
                                                                     </a>
                                                                     <a class="btn btn-danger btn-sm" href="">

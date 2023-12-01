@@ -30,45 +30,65 @@
                     </li>
                     <!-- menu item calendar-->
                     <li>
-                        <a href="javascript:void(0);" data-toggle="collapse" data-target="#calendar-menu">
-                            <div class="pull-left"> <i class="ti-calendar"></i> {{__('mainpage.class_room')}}<span
+                        <a href="javascript:void(0);" data-toggle="collapse" data-target="#chalkboard">
+                            <div class="pull-left"> <i class="fa fa-window-maximize"></i> {{__('mainpage.class_room')}}<span
                                 
                                     class="right-nav-text"></span></div>
                             <div class="pull-right"><i class="ti-plus"></i></div>
                             <div class="clearfix"></div>
                         </a>
 
-                        <ul id="calendar-menu" class="collapse" data-parent="#sidebarnav">
+                        <ul id="chalkboard" class="collapse" data-parent="#sidebarnav">
                             <li> <a href="{{route('class.index')}}">{{__('mainpage.class_room')}} </a> </li>
-                            <li> <a href="{{route('section.index')}}">{{__('mainpage.sections')}} </a> </li>
+                            <li> <a  href="{{route('section.index')}}">{{__('mainpage.sections')}} </a> </li>
 
                         </ul>
                         
                     </li>
                     <!-- menu item todo-->
                     <li>
-                        <a href="todo-list.html"><i class="fa fa-edit"></i><span class="right-nav-text">{{__('mainpage.students')}}</span> </a>
+                        <a href="javascript:void(0);" data-toggle="collapse" data-target="#students">
+                            <div class="pull-left"> <i class="fa fa-user"></i> {{__('mainpage.students')}}<span
+                                
+                                    class="right-nav-text"></span></div>
+                            <div class="pull-right"><i class="ti-plus"></i></div>
+                            <div class="clearfix"></div>
+                        </a>
+                        <ul id="students" class="collapse" data-parent="#sidebarnav">
+                            <li><a href="{{route('students.create')}}"><i class=""></i><span class="left-nav-text"></span>{{__('mainpage.students')}}</a></li>
+                        </ul>
+                        
                     </li>
                     <!-- menu item chat-->
                     <li>
-                        <a href="chat-page.html"><i class="ti-comments"></i><span class="right-nav-text">{{__('mainpage.Teachers')}}
-                            </span></a>
+                        <a href="javascript:void(0);" data-toggle="collapse" data-target="#teacher">
+                            <div class="pull-left"> <i class="ti-comments"></i> {{__('mainpage.Teachers')}}<span
+                                
+                                    class="right-nav-text"></span></div>
+                            <div class="pull-right"><i class="ti-plus"></i></div>
+                            <div class="clearfix"></div>
+                        </a>
+                        <ul id="teacher" class="collapse" data-parent="#sidebarnav">
+                            <li><a href="{{route('teacher.index')}}"><i class=""></i><span class="left-nav-text"></span>{{__('mainpage.Teachers')}}</a></li>
+                        </ul>
+                        
                     </li>
+
                     <!-- menu item mailbox-->
                     <li>
-                        <a href="mail-box.html"><i class="ti-email"></i><span class="right-nav-text">{{__('mainpage.Exams')}}
-                                <span></span> </a>
+                        <a href="mail-box.html"><i class="fa fa-"></i><span class="right-nav-text"></span>{{__('mainpage.Exams')}}
+                             </a>
                     </li>
                     <!-- menu item Charts-->
                     
 
                    
-                            <li> <a  href="chart-js.html"><i class="ti-comments"></i><span class="right-nav-text">{{__('mainpage.Online classes')}}</a> </span> </li>
+                            <li> <a  href="chart-js.html"><i class="ti-comments"></i><span class="right-nav-text"></span>{{__('mainpage.Online classes')}}</a></li>
 
                                {{-- menu item parant --}}
                                <li>
                                 <a href="javascript:void(1);" data-toggle="collapse" data-target="#item_parant">
-                                    <div class="pull-left"> <i class="ti-calendar"></i> {{__('mainpage.Parents')}}<span
+                                    <div class="pull-left"> <i class="ti-user"></i> {{__('mainpage.Parents')}}<span
                                         
                                             class="right-nav-text"></span></div>
                                     <div class="pull-right"><i class="ti-plus"></i></div>
@@ -76,19 +96,17 @@
                                 </a>
         
                                 <ul id="item_parant" class="collapse" data-parent="#sidebarnav">
-                                    <li> <a href="">{{__('mainpage.Parents')}} </a> </li>
-                                    <li> <a href="{{route('add_parent')}}">اضافة ولي الامر </a> </li>
-        
+                                    <li> <a href="{{route('add.parent')}}">{{__('mainpage.Parents')}} </a> </li>        
                                 </ul>
                                 
                             </li>
 
 
-                            <li> <a  href="chart-js.html"><i class="ti-comments"></i><span class="right-nav-text">{{__('mainpage.setings')}}</a> </span> </li>
+                            <li> <a  href="chart-js.html"><i class="fa fa-user"></i><span class="right-nav-text"></span>{{__('mainpage.setings')}}</a></li>
                             
                     
                    
-                            <li> <a href="fontawesome-icon.html"><i class="ti-comments"></i> {{__('mainpage.Absence')}}</a> </li>
+                            <li> <a href="fontesome.html"><i class="fa fa-calendar-days"></i> {{__('mainpage.Absence')}}</a> </li>
                        
 
                     

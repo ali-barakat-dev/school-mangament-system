@@ -19,12 +19,12 @@ class Classroom extends Model
         'created_at',
         'updated_at',
     ];
-    public function grades()
+    public function grade()
     {
-        return $this->BelongsTo(Grade::class);
+        return $this->BelongsTo(Grade::class,'grade_id','id','classrooms');
     }
 
-    public function my_class()
+    public function Section()
     {
 
         return $this->hasMany(Section::class);

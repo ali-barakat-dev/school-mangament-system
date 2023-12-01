@@ -46,7 +46,7 @@
 
                         <td><a href="">{{$class->name}}</a></td>
                  
-                      <td>{{$class->grades->name_ar}}</td> 
+                      <td>{{$class->grade->name_ar}}</td> 
                           
                       <td><a class="btn btn-info btn-sm" href="{{route('class.edit',$class->id)}}">
                         <i class="fa fa-edit"></i></a>

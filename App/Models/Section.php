@@ -14,15 +14,19 @@ class Section extends Model
         'grade_id',
         'classroom_id',
     ];
-    // public function grades()
-    // {
-
-    //     return $this->belongsTo(Grade::class,'id');
-
-    // }
+    public function grade()
+    {
+        return $this->BelongsTo(Grade::class,'grade_id');
+    }
 
     //علاقة بين القسم والصفوف لعرض اسم الصف في الاقسام
-    public function my_class()
+    public function classroom()
+    {
+
+        return $this->belongsTo(Classroom::class,'classroom_id');
+
+    }
+    public function teachers()
     {
 
         return $this->belongsTo(Classroom::class);

@@ -15,14 +15,14 @@ class Grade extends Model
     public function classes()
     {
 
-        return $this->hasMany(Classroom::class);
+        return $this->hasMany(Classroom::class,'id');
 
     }
     //علاقة المراحل الدراسية لجلب الاقسام المتعلقة بكل مرحلة
-    public function Sections()
+    public function Section()
     {
 
-        return $this->hasMany(Section::class, 'id');
+        return $this->hasMany(Section::class, 'grade_id');
 
     }
 }

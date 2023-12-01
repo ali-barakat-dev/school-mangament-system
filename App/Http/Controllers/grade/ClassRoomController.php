@@ -8,21 +8,20 @@ use App\Models\Classroom;
 use App\Models\Grade;
 use Mcamara\LaravelLocalization\Facades\LaravelLocalization;
 
-class Classromcontroller extends Controller
+class ClassRoomController extends Controller
 {
-    function index($id)
+    function index()
     {
-        
 
-        // $clases = Classroom::with('grades')->select(
-        //     [
-        //         'id',
-        //         'name_class_' . LaravelLocalization::getCurrentLocale() . ' as name',
-        //         'grade_id'
-        //     ]
-        // )->get();
-        // return view('class_room.classroom', compact('sections'));
-        return $sections;
+        $clases = ClassRoom::with(['grade'])->select(
+            [
+                'id',
+                'name_class_' . LaravelLocalization::getCurrentLocale() . ' as name',
+                'grade_id',
+            ]
+        )->get();
+      return view('class_room.classroom', compact('clases'));
+    
     }
     function create()
     {
@@ -41,8 +40,8 @@ class Classromcontroller extends Controller
     function edit($class_id)
     {
         $grade = Grade::all();
-        $class = Classroom::find($class_id);
-        Classroom::select([
+        $class = ClassRoom::find($class_id);
+        ClassRoom::select([
             'name_class_ar',
             'name_class_en',
             'grade_id',
@@ -51,7 +50,7 @@ class Classromcontroller extends Controller
     }
     public function update(ClassRoomRequest $request, $class_id)
     {
-        $class = Classroom::find($class_id);
+        $class = ClassRoom::find($class_id);
         if (!$class)
             return redirect()->back();
         $class->update($request->all());
@@ -59,7 +58,7 @@ class Classromcontroller extends Controller
     }
     public function delete($class_id)
     {
-        $class = Classroom::find($class_id);
+        $class = ClassRoom::find($class_id);
         $class->delete();
         return redirect()->route('class.index');
     }

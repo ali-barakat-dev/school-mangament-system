@@ -30,11 +30,13 @@
 
                 {{-- language website --}}
                 <div class="btn-group mb-1">
-                    <button type="button" class="btn btn-light btn-sm dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    <button type="button" class="btn btn-dark btn-md dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                       @if (App::getLocale() == 'ar')
                       {{ LaravelLocalization::getCurrentLocaleName() }}
+                      <img src="{{asset('assets/images/flags/EG.png')}}">
                       @else
                       {{ LaravelLocalization::getCurrentLocaleName() }}
+                      <img src="{{asset('assets/images/flags/Us.png')}}">
                       @endif
                       </button>
                     <div class="dropdown-menu">

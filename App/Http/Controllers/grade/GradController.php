@@ -52,7 +52,7 @@ class GradController extends Controller
             $grad = Grade::find($request->id)->delete();
             return redirect()->route('grad.index');
         } else {
-            return 'error';
+           return 'error';
         }
 
     }

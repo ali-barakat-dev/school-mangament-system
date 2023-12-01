@@ -1,5 +1,6 @@
 <?php
 
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 use Mcamara\LaravelLocalization\Facades\LaravelLocalization;
 
@@ -27,12 +28,16 @@ Route::group(
         });
 
         Route::group(['namespace' => 'grade', 'prefix' => 'section'], function () {
-            Route::get('/', 'Sectioncontroller@index')->name('section.index');
-            Route::get('create', 'Sectioncontroller@create')->name('section.create');
-            Route::post('store', 'Sectioncontroller@store')->name('section.store');
+            Route::get('/', 'SectionController@index')->name('section.index');
+            Route::get('create', 'SectionController@create')->name('section.create');
+            Route::post('store', 'SectionController@store')->name('section.store');
+            Route::get('edit/{list_Section_id}', 'SectionController@edit')->name('section.edit');
+            Route::post('update/{list_Section_id}', 'SectionController@update')->name('section.update');
+            Route::get('delete/{list_Section_id}', 'SectionController@delete')->name('section.delete');
+           
+            Route::get('classes{id}','SectionController@getclasses');
         });
-
-        Route::view('/Add_parent', 'livewire.show_parent')->name('add_parent');
+        
 
         Route::group(['namespace' => 'grade', 'prefix' => 'classroom'], function () {
             Route::get('/', 'Classromcontroller@index')->name('class.index');
@@ -42,6 +47,28 @@ Route::group(
             Route::post('update/{class_id}', 'Classromcontroller@update')->name('class.update');
             Route::get('/delete/{class_id}', 'Classromcontroller@delete')->name('class.delete');
         });
+
+        Route::view('/Add_parent', 'livewire.show_form')->name('add.parent');
+
+        Route::group(['namespace' => 'teachers', 'prefix' => 'Teacher'], function () {
+            Route::get('/', 'TeacherController@index')->name('teacher.index');
+            Route::get('creat', 'TeacherController@create')->name('teacher.create');
+            Route::post('store', 'TeacherController@store')->name('teacher.store');
+            Route::get('edit/{Teacher_id}', 'TeacherController@edit')->name('teacher.edit');
+            Route::post('update/{Teacher_id}', 'TeacherController@update')->name('teacher.update');
+            Route::get('/delete/{Teacher_id}', 'TeacherController@delete')->name('teacher.delete');
+        });
+
+        Route::group(['namespace' => 'students', 'prefix' => 'Students'], function () {
+            Route::get('/', 'StudentController@index')->name('students.index');
+            Route::get('creat', 'StudentController@create')->name('students.create');
+            Route::post('store', 'StudentController@store')->name('students.store');
+            Route::get('edit/{Student_id}', 'StudentController@edit')->name('students.edit');
+            Route::post('update/{Student_id}', 'StudentController@update')->name('students.update');
+            Route::get('/delete/{Student_id}', 'StudentController@delete')->name('students.delete');
+        });
+        
     }
+
 
 );
