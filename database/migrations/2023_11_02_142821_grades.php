@@ -18,8 +18,8 @@ class Grades extends Migration
             $table->text('name_en');
             $table->text('name_ar');
             $table->text('procsess');
-            $table->timestamp('created_at');
-            $table->timestamp('updated_at');
+            $table->timestamp('created_at')->nullable();
+            $table->timestamp('updated_at')->nullable();
         });
     }
 
