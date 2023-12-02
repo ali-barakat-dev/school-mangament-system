@@ -21,8 +21,8 @@ Route::group(
             return view('dashboard');
         })->name('dashboard.index');
 
-        Route::group(['namespace' => 'grade','prefix'=>'Grad'], function () {
-            Route::resource('/', 'GradController');
+        Route::group(['namespace' => 'grade'], function () {
+            Route::resource('/grad', 'GradController');
             Route::get('delete/{id}', 'GradController@destroy')->name('grade_delete');
 
         });
@@ -30,7 +30,7 @@ Route::group(
         Route::group(['namespace' => 'grade', 'prefix' => 'sections'], function () {
             Route::get('/', 'SectionController@index')->name('section.index');
             Route::get('create', 'SectionController@create')->name('section.create');
-            Route::post('store', 'SectionController@store')->name('section.store');
+            Route::post('create', 'SectionController@store')->name('section.store');
             Route::get('edit/{list_Section_id}', 'SectionController@edit')->name('section.edit');
             Route::post('update/{list_Section_id}', 'SectionController@update')->name('section.update');
             Route::get('destroy/{list_Section_id}', 'SectionController@destroy')->name('section.destroy');
