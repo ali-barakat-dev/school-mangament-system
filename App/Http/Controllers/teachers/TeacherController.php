@@ -40,7 +40,7 @@ class TeacherController extends Controller
 
     return $this->Teacher->TeacherUpdate($request);
     }
-    function delete(Request $request){
+    function destroy(Request $request){
     return $this->Teacher->DeleteTeacher($request);
 
     }
