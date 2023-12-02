@@ -15,15 +15,12 @@ class ClassRoom extends Model
         'grade_id',
 
     ];
-    public $hidden = [
-        'created_at',
-        'updated_at',
-    ];
+  //relationship with grad
     public function grade()
     {
         return $this->BelongsTo(Grade::class,'grade_id','id','classrooms');
     }
-
+  //relation ship with section
     public function Section()
     {
 
