@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers\students;
 use App\Http\Controllers\Controller;
-
+use App\models\Student;
 use App\Repositry\StudentRepositry;
 use Illuminate\Http\Request;
 
@@ -19,8 +19,8 @@ class StudentController extends Controller
     }
     function create()
     {
-    return  $this->Student->craetestudent();
-       
+    $student= $this->Student->craetestudent();
+return view('students.add_student',compact('student'));
     }
     function store(Request $request)
     {

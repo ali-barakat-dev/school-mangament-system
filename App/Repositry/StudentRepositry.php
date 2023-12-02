@@ -39,7 +39,7 @@ class StudentRepositry implements StudentRepositryInterface
         $data['Genders']=Gender::all();
         $data['Nationals']=Nationalitie::all();
         $data['bloods']=Bload::all();
-        return view('student.student_add',$data);
+        return view('students.add_student',$data);
       }
       public function StudentsStore($request)
       {   
