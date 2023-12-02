@@ -56,7 +56,7 @@ class ClassRoomController extends Controller
         $class->update($request->all());
         return redirect()->route('class.index');
     }
-    public function delete($class_id)
+    public function destroy($class_id)
     {
         $class = ClassRoom::find($class_id);
         $class->delete();
