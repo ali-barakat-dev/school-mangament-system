@@ -18,19 +18,19 @@
                     </li>
                     <!-- menu title -->
                     <li class="mt-10 mb-10 text-muted pl-4 font-medium menu-title">{{__('mainpage.Fadwa Toqan')}} </li>
-                    <!-- menu item Elements-->
+                    <!-- menu item grades-->
                     <li>
-                        <a href="javascript:void(0);" data-toggle="collapse" data-target="#elements">
+                        <a href="javascript:void(0);" data-toggle="collapse" data-target="#grades">
                             <div class="pull-left"><i class="ti-palette"></i><span class="right-nav-text">{{__('mainpage.grades')}}</span></div>
                             <div class="pull-right"><i class="ti-plus"></i></div>
                             <div class="clearfix"></div>
                         </a>
-                        <ul id="elements" class="collapse" data-parent="#sidebarnav"><li><a href="{{route('grad.index')}}">{{__('mainpage.grades_list')}}</a></li>
+                        <ul id="grades" class="collapse" data-parent="#sidebarnav"><li><a href="{{route('grad.index')}}">{{__('mainpage.grades_list')}}</a></li>
                         </ul>
                     </li>
-                    <!-- menu item calendar-->
+                    <!-- menu item Class_Room-->
                     <li>
-                        <a href="javascript:void(0);" data-toggle="collapse" data-target="#chalkboard">
+                        <a href="javascript:void(0);" data-toggle="collapse" data-target="#Class_Room">
                             <div class="pull-left"> <i class="fa fa-window-maximize"></i> {{__('mainpage.class_room')}}<span
                                 
                                     class="right-nav-text"></span></div>
@@ -38,14 +38,14 @@
                             <div class="clearfix"></div>
                         </a>
 
-                        <ul id="chalkboard" class="collapse" data-parent="#sidebarnav">
+                        <ul id="Class_Room" class="collapse" data-parent="#sidebarnav">
                             <li> <a href="{{route('class.index')}}">{{__('mainpage.class_room')}} </a> </li>
                             <li> <a  href="{{route('section.index')}}">{{__('mainpage.sections')}} </a> </li>
 
                         </ul>
                         
                     </li>
-                    <!-- menu item todo-->
+                    <!-- menu item students-->
                     <li>
                         <a href="javascript:void(0);" data-toggle="collapse" data-target="#students">
                             <div class="pull-left"> <i class="fa fa-user"></i> {{__('mainpage.students')}}<span
@@ -55,7 +55,8 @@
                             <div class="clearfix"></div>
                         </a>
                         <ul id="students" class="collapse" data-parent="#sidebarnav">
-                            <li><a href="{{route('students.create')}}"><i class=""></i><span class="left-nav-text"></span>{{__('mainpage.students')}}</a></li>
+                            <li><a href="{{route('students.index')}}"><i class=""></i><span class="left-nav-text"></span>
+                                {{__('mainpage.students')}}</a></li>
                         </ul>
                         
                     </li>
@@ -69,7 +70,8 @@
                             <div class="clearfix"></div>
                         </a>
                         <ul id="teacher" class="collapse" data-parent="#sidebarnav">
-                            <li><a href="{{route('teacher.index')}}"><i class=""></i><span class="left-nav-text"></span>{{__('mainpage.Teachers')}}</a></li>
+                            <li><a href="{{route('teacher.index')}}"><i class=""></i><span class="left-nav-text"></span>
+                                {{__('mainpage.Teachers')}}</a></li>
                         </ul>
                         
                     </li>
