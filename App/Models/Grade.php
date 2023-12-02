@@ -12,13 +12,14 @@ class Grade extends Model
         'name_ar',
         'procsess',
     ];
+    // The relationship of grades with the academic levels for each grade
     public function classes()
     {
 
         return $this->hasMany(ClassRoom::class,'id');
 
     }
-    //علاقة المراحل الدراسية لجلب الاقسام المتعلقة بكل مرحلة
+    //The relationship between the academic stages to bring the sections related to each stage
     public function Section()
     {
 
