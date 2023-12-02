@@ -33,7 +33,7 @@ Route::group(
             Route::post('store', 'SectionController@store')->name('section.store');
             Route::get('edit/{list_Section_id}', 'SectionController@edit')->name('section.edit');
             Route::post('update/{list_Section_id}', 'SectionController@update')->name('section.update');
-            Route::get('delete/{list_Section_id}', 'SectionController@destroy')->name('section.delete');
+            Route::get('destroy/{list_Section_id}', 'SectionController@destroy')->name('section.destroy');
            
             Route::get('classes{id}','SectionController@getclasses');
         });
@@ -45,7 +45,7 @@ Route::group(
             Route::post('store', 'ClassRoomController@store')->name('class.store');
             Route::get('edit/{class_id}', 'ClassRoomController@edit')->name('class.edit');
             Route::post('update/{class_id}', 'ClassRoomController@update')->name('class.update');
-            Route::get('/delete/{class_id}', 'ClassRoomController@delete')->name('class.delete');
+            Route::get('destroy/{class_id}', 'ClassRoomController@destroy')->name('class.destroy');
         });
 
         Route::view('/Add_parent', 'livewire.show_form')->name('add.parent');
@@ -56,7 +56,7 @@ Route::group(
             Route::post('store', 'TeacherController@store')->name('teacher.store');
             Route::get('edit/{Teacher_id}', 'TeacherController@edit')->name('teacher.edit');
             Route::post('update/{Teacher_id}', 'TeacherController@update')->name('teacher.update');
-            Route::get('/delete/{Teacher_id}', 'TeacherController@delete')->name('teacher.delete');
+            Route::get('destroy/{Teacher_id}', 'TeacherController@destroy')->name('teacher.destroy');
         });
 
         Route::group(['namespace' => 'students', 'prefix' => 'Students'], function () {
@@ -65,7 +65,7 @@ Route::group(
             Route::post('store', 'StudentController@store')->name('students.store');
             Route::get('edit/{Student_id}', 'StudentController@edit')->name('students.edit');
             Route::post('update/{Student_id}', 'StudentController@update')->name('students.update');
-            Route::get('/delete/{Student_id}', 'StudentController@delete')->name('students.delete');
+            Route::get('destroy/{Student_id}', 'StudentController@destroy')->name('students.destroy');
         });
         
     }
