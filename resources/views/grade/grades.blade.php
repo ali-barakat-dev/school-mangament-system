@@ -14,7 +14,7 @@
         </div>
         <div class="col-sm-6">
             <ol class="breadcrumb pt-0 pr-0 float-left float-sm-right ">
-                <li class="breadcrumb-item"><a href="#" class="default-color">Home</a></li>
+                <li class="breadcrumb-item"><a href="{{route('dashboard.index')}}" class="default-color">Home</a></li>
                 <li class="breadcrumb-item active">{{__('grades.List_grade')}}</li>
             </ol>
         </div>
@@ -43,10 +43,6 @@
                       </tr>
                     </thead>
                     <tbody>
-                      {{-- @if ($grades)
-                     
-                        
-                   @else --}}
                       @foreach ($grades as $grade)
                       <tr>
                         <th scope="row">{{$grade->id}}</th>
@@ -62,21 +58,13 @@
                       </tr>    
                       
                       @endforeach
-                      {{-- @endif --}}
                     </tbody>
                   </table>
             </div>
-            <a class="btn btn-dark"
-                      href="{{route('grad.create')}}"
-                     data-bs-target="#Modal">{{__('grades.Add_grade')}}</a>
+            <a class="btn btn-dark" href="{{route('grad.create')}}">{{__('grades.Add_grade')}}</a>
         </div>
     </div>
 </div>
 
 <!-- row closed -->
-@endsection
-@section('js')
-<script>
-
-  </script>
 @endsection
