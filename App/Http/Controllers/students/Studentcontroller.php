@@ -8,13 +8,14 @@ use Illuminate\Http\Request;
 
 class StudentController extends Controller
 {
-    protected $Student;
+    public $Student;
     function __construct(StudentRepositry $Student)
     {
         $this->Student = $Student;
     }
     function index(){
-
+    $students= $this->Student->getAllStudents();
+    return view('students.students',compact('students'));
     }
     function create()
     {

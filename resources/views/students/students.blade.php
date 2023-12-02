@@ -28,7 +28,7 @@ students
     <div class="col-md-12 mb-30">
         <div class="card card-statistics h-100">
             <div class="card-body">
-                <a href="{{route('teacher.create')}}" class="btn btn-success btn-sm nextBtn btn-lg pull-right" type="button">add Teacher</a>
+                <a href="{{route('students.create')}}" class="btn btn-success btn-sm nextBtn btn-lg pull-right" type="button">add Teacher</a>
                 <div class="table-responsive">
                     <table id="datatable" class="table table-hover table-sm tablebordered p-0" data-page-lenth="50" >
                 <thead>
@@ -44,27 +44,27 @@ students
                     </tr>
                 </thead>
                 <tbody>
-                    {{-- @foreach ()
+                     @foreach ($students as $student)
                     <tr>
-                    <td> {{$Teacher->id}}</td>
-                    <td>{{$Teacher->Email}}</td>
-                    <td>{{$Teacher->Name}}</td>
-                    <td>{{$Teacher->genders->Name}}</td>
-                    <td>{{$Teacher->joining_Date}}</td>
-                    <td>{{$Teacher->Address}}</td>
-                    <td>{{$Teacher->speciallztions->Name}}</td>
-                     --}}
+                    <td> {{$student->id}}</td>
+                    <td>{{$student->Email}}</td>
+                    <td>{{$student->Name}}</td>
+                    <td>{{$student->genders->Name}}</td>
+                    <td>{{$student->joining_Date}}</td>
+                    <td>{{$student->Address}}</td>
+                    <td>{{$student->speciallztions->Name}}</td>
+                    
                     <td>
-                        <a class="btn btn-info btn-sm" data-bs-toggle="modal" data-bs-target="#exampleModal" href="{{route('teacher.edit',$Teacher->id)}}" >
+                        <a class="btn btn-info btn-sm">
                             <i class="fa fa-edit"></i>
                         </a>
                         
-                        <a class="btn btn-danger btn-sm" href="{{route('teacher.delete',$Teacher->id)}}">
+                        <a class="btn btn-danger btn-sm" >
                             <i class="fa fa-trash"></i>
                         </a>
                     </td>
-                </tr><
-                    {{-- @endforeach --}}
+                </tr>
+                 @endforeach 
                 </tbody>
                     </table>
                 </div>
