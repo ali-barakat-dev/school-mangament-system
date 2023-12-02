@@ -50,7 +50,7 @@
                           
                       <td><a class="btn btn-info btn-sm" href="{{route('class.edit',$class->id)}}">
                         <i class="fa fa-edit"></i></a>
-                       <a class="btn btn-danger btn-sm" href="{{route('class.delete',$class->id)}}"  >
+                       <a class="btn btn-danger btn-sm" href="{{route('class.destroy',$class->id)}}"  >
                         <i class="fa fa-trash"></i></a></td>
 
                       </tr>
