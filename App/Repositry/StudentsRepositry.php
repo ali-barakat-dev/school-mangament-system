@@ -2,7 +2,7 @@
 
 namespace App\Repositry;
 
-use App\models\Students;
+use App\models\Student;
 use App\models\Bload;
 use App\models\Gender;
 use App\Models\Grade;
@@ -12,7 +12,7 @@ use Exception;
 use Illuminate\Support\Facades\Hash;
 
 
-interface StudentsRepositryInterface
+interface StudentRepositryInterface
 {
     public function getAllStudents();
     public function getGender();
@@ -21,12 +21,12 @@ interface StudentsRepositryInterface
   public function StudentsUpdate($request);
   public function DeleteStudents($id);
 }
-class StudentsRepositry implements StudentsRepositryInterface
+class StudentRepositry implements StudentRepositryInterface
 {
 
       public function getAllStudents()
       {
-       return Students::all();
+       return Student::all();
       }
       public function getGender()
       {
@@ -45,7 +45,7 @@ class StudentsRepositry implements StudentsRepositryInterface
     
     try{
 
-      $Teachers=new Students();
+      $Teachers=new Student();
       $Teachers->Email =$request->Email;
       $Teachers->Password =Hash::make($request->Password);
       $Teachers->Name =['en'=>$request->Name_en ,'ar'=>$request->Name_ar];
@@ -61,11 +61,11 @@ class StudentsRepositry implements StudentsRepositryInterface
 
       }
       public function editStudents($id){
-        return  Students::findOrfail($id);
+        return  Student::findOrfail($id);
       }
   public function StudentsUpdate($request){
    try{
-     $Teachers= Students::findOrFail($request->id);
+     $Teachers= Student::findOrFail($request->id);
 
     $Teachers->Email =$request->Email;
     $Teachers->Password =Hash::make($request->Password);
@@ -86,7 +86,7 @@ class StudentsRepositry implements StudentsRepositryInterface
   }
 
   public function DeleteStudents($id){
-    Students::findOrfail($id)->delete();
+    Student::findOrfail($id)->delete();
     
   }
 

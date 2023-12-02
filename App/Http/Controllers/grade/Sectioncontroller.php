@@ -31,7 +31,7 @@ class SectionController extends Controller
         ]);
         return redirect()->route('section.index');
     }
-   function edit($list_Section_id,Request $r){
+   function edit($list_Section_id){
     $grades = Grade::all(); 
     $classes = ClassRoom::all();
     $section = Section::find($list_Section_id);

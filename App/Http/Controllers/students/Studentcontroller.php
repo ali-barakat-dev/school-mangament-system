@@ -3,13 +3,13 @@
 namespace App\Http\Controllers\students;
 use App\Http\Controllers\Controller;
 
-use App\Repositry\StudentsRepositry;
+use App\Repositry\StudentRepositry;
 use Illuminate\Http\Request;
 
 class StudentController extends Controller
 {
     protected $Student;
-    function __construct(StudentsRepositry $Student)
+    function __construct(StudentRepositry $Student)
     {
         $this->Student = $Student;
     }

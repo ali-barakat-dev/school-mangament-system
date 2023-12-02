@@ -2,11 +2,11 @@
 
 namespace App\Providers;
 
-use App\Repositry\StudentsRepositry;
+use App\Repositry\StudentRepositry;
 use App\Repositry\TeacherRepositry;
 use Illuminate\Support\ServiceProvider;
 
-class ReposerviceProvider extends ServiceProvider
+class RepoServiceProvider extends ServiceProvider
 {
     public function register()
     {
@@ -15,7 +15,7 @@ class ReposerviceProvider extends ServiceProvider
           
         );
         $this->app->bind(
-            StudentsRepositry::class
+            StudentRepositry::class
         );
     }
     public function boot()
