@@ -38,7 +38,7 @@ class SectionController extends Controller
 
     }
 
-     function delete(){
+     function destroy(){
 
      }
 
