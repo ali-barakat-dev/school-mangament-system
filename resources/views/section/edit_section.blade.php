@@ -14,7 +14,7 @@
         </div>
         <div class="col-sm-6">
             <ol class="breadcrumb pt-0 pr-0 float-left float-sm-right ">
-                <li class="breadcrumb-item"><a href="{{url('')}}" class="default-color">Home</a></li>
+                <li class="breadcrumb-item"><a href="{{route('section.index')}}" class="default-color">Home</a></li>
                 <li class="breadcrumb-item active">{{__('section.add_section')}}</li>
             </ol>
         </div>
@@ -29,17 +29,18 @@
         <div class="card card-statistics h-100">
             <div class="card-body col-md-6 mb-30">
                 <div class="container">
-                <form action="{{route('section.update')}}" method="POST">
+                <form action="{{route('section.update',$section->id)}}" method="POST">
                     @csrf
                     <label for="">{{__('section.name_section_ar')}}</label><br>
-                    <input class="form-control form-control-lg" type="text" name="name_ar" value="name_ar"
+
+                    <input class="form-control form-control-lg" type="text" name="name_ar" value="{{$section->name_ar}}"
                     placeholder="{{__('section.name_section_ar')}}" aria-label=".form-control-lg example">
                     @error('name_ar')
                         {{$message}}
                     @enderror
                     <br>
                     <label for="">{{__('section.name_section_en')}}</label><br>
-                    <input class="form-control form-control-md" type="text" name="name_en" value="name_ar"
+                    <input class="form-control form-control-md" type="text" name="name_en" value="{{$section->name_en}}"
                     placeholder="{{__('section.name_section_en')}}" aria-label=".form-control-lg example">
                     @error('name_en')
                     {{$message}}
@@ -62,7 +63,7 @@
                         <br>
                       </select>
                       <label>{{__('section.status')}}</label>
-                      <input  class="form-control form-control-md" type="text" name="status" value="status">
+                      <input  class="form-control form-control-md" type="text" name="status" value="{{$section->status}}">
                     <br><br> <input type="submit" class="btn btn-dark" value="{{__('section.submit')}}">
                 </form>
             </div>

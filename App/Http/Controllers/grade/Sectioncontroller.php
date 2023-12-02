@@ -19,7 +19,8 @@ class SectionController extends Controller
         $grades = Grade::all(); 
         $classes = ClassRoom::all();
            $teacher=Teacher::all();
-        return view('section.add_section', compact('grades', 'classes','teacher')); }
+        return view('section.add_section', compact('grades', 'classes','teacher'));
+     }
     function store(Request $r){
         Section::create([
             'name_en' => $r['name_en'],
@@ -30,21 +31,21 @@ class SectionController extends Controller
         ]);
         return redirect()->route('section.index');
     }
-   function edit($list_Section_id){
-
-   return $list_Section_id;
+   function edit($list_Section_id,Request $r){
+    $grades = Grade::all(); 
+    $classes = ClassRoom::all();
+    $section = Section::find($list_Section_id);
+       return view('section.edit_section',compact('section','grades','classes')); 
    }
-   function update(){
-
+   function update(Request $r,$list_Section_id){
+    $section = Section::findOrFail($list_Section_id)->update($r->all());
+    return redirect()->route('section.index');
     }
 
-     function destroy(){
-
+     function destroy($list_Section_id){
+     Section::findOrFail($list_Section_id)->delete();
+     return redirect()->back();  
      }
-
-
-
-
     function getclasses($id)
     {
         $list_class = Classroom::where('grade_id', $id)->pluck('name_class_ar', 'id');
