@@ -9,10 +9,11 @@ use App\models\Gender;
 use App\Models\Grade;
 use App\models\MyParant;
 use App\models\Nationalitie;
+use App\Models\Religion;
 use App\Models\Section;
 use Exception;
 use Illuminate\Support\Facades\Hash;
-use Religion;
+
 
 interface StudentRepositryInterface
 {
@@ -43,6 +44,7 @@ class StudentRepositry implements StudentRepositryInterface
         $data['bloods']=Bload::all();
         $data['Grades']=Grade::all();
         $data['sections']=Section::all();
+        $data['riligaion']=Religion::all();
         return view('students.add_student',$data);
       }
       public function StudentsStore($request)
