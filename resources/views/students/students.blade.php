@@ -37,9 +37,10 @@ students
                         <th>{{__('Students.Email')}}</th>
                         <th>{{__('students.Name')}}</th>
                         <th>{{__('students.Gender')}}</th>
-                        <th>{{__('students.specialization_id')}}</th>
-                        <th>{{__('students.joining_Date')}}</th>    
-                        <th>{{__('students.Address')}} </th>  
+                        <th>{{__('students.Date_Birth')}}</th>
+                        <th>{{__('students.grade')}}</th>    
+                        <th>{{__('students.classroom')}} </th>
+                        <th>{{__('students.Section')}}</th>  
                         <th>{{__('students.procsessn')}} </th>  
                     </tr>
                 </thead>
@@ -47,12 +48,13 @@ students
                      @foreach ($students as $student)
                     <tr>
                     <td> {{$student->id}}</td>
-                    <td>{{$student->Email}}</td>
+                    <td>{{$student->email}}</td>
                     <td>{{$student->Name}}</td>
-                    <td>{{$student->genders->Name}}</td>
+                    <td>{{$student->gender->Name}}</td>
                     <td>{{$student->Date_Birth}}</td>
-                    <td>{{$student->nationalitie->Name}}</td>
-                    <td>{{$student->speciallztions->Name}}</td>
+                    <td>{{$student->grade->name_ar}}</td>
+                    <td>{{$student->classroom->name_class_ar}}</td>
+                    <td>{{$student->Section->name_ar}}</td>
                     
                     <td>
                         <a class="btn btn-info btn-sm">
