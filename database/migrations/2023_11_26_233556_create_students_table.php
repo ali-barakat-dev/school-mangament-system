@@ -15,6 +15,27 @@ class CreateStudentsTable extends Migration
     {
         Schema::create('students', function (Blueprint $table) {
             $table->id();
+            $table->text('name');
+            $table->string('email')->unique();
+            $table->string('password');
+            $table->bigInteger('gender_id')->unsigned();
+            $table->foreign('gender_id')->references('id')->on('genders')->onDelete('cascade');
+            $table->bigInteger('nationalitie_id')->unsigned();
+            $table->foreign('nationalitie_id')->references('id')->on('nationalities')->onDelete('cascade');
+            $table->bigInteger('bload_id')->unsigned();
+            $table->foreign('bload_id')->references('id')->on('bloads')->onDelete('cascade');
+            $table->date('Date_Birth');
+            $table->bigInteger('grade_id')->unsigned();
+            $table->foreign('grade_id')->references('id')->on('grades');
+            $table->bigInteger('classroom_id')->unsigned();
+            $table->foreign('classroom_id')->references('id')->on('class_rooms');
+            
+            $table->bigInteger('section_id')->unsigned();
+            $table->foreign('section_id')->references('id')->on('sections');
+            $table->bigInteger('parant_id')->unsigned();
+            $table->foreign('parant_id')->references('id')->on('my_parants');
+            $table->string('academic_year');
+
             $table->timestamps();
         });
     }

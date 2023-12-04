@@ -14,13 +14,12 @@ class StudentController extends Controller
         $this->Student = $Student;
     }
     function index(){
-    $students= $this->Student->getAllStudents();
-    return view('students.students',compact('students'));
+      return $this->Student->getAllStudents();
     }
     function create()
     {
-    $student= $this->Student->craetestudent();
-return view('students.add_student',compact('student'));
+    return $this->Student->craetestudent();
+
     }
     function store(Request $request)
     {

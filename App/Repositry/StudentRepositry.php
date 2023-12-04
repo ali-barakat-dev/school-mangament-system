@@ -4,13 +4,15 @@ namespace App\Repositry;
 
 use App\models\Student;
 use App\models\Bload;
+use App\Models\ClassRoom;
 use App\models\Gender;
 use App\Models\Grade;
 use App\models\MyParant;
 use App\models\Nationalitie;
+use App\Models\Section;
 use Exception;
 use Illuminate\Support\Facades\Hash;
-
+use Religion;
 
 interface StudentRepositryInterface
 {
@@ -26,19 +28,21 @@ class StudentRepositry implements StudentRepositryInterface
 
       public function getAllStudents()
       {
-       return Student::all();
-       
+       $students=Student::all();
+     return view('students.students',compact('students'));
       }
       public function getGender()
       {
        return Gender::all();
       }
       public function craetestudent(){
-        $data['my_class']=Grade::all();
+        $data['my_class']=ClassRoom::all();
         $data['parants']=MyParant::all();
         $data['Genders']=Gender::all();
         $data['Nationals']=Nationalitie::all();
         $data['bloods']=Bload::all();
+        $data['Grades']=Grade::all();
+        $data['sections']=Section::all();
         return view('students.add_student',$data);
       }
       public function StudentsStore($request)
