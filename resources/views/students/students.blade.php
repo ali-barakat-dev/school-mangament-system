@@ -50,8 +50,8 @@ students
                     <td>{{$student->Email}}</td>
                     <td>{{$student->Name}}</td>
                     <td>{{$student->genders->Name}}</td>
-                    <td>{{$student->joining_Date}}</td>
-                    <td>{{$student->Address}}</td>
+                    <td>{{$student->Date_Birth}}</td>
+                    <td>{{$student->nationalitie->Name}}</td>
                     <td>{{$student->speciallztions->Name}}</td>
                     
                     <td>

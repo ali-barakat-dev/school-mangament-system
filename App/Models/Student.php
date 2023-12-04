@@ -14,4 +14,8 @@ class Student extends Model
     public function gender(){
         return $this->belongsTo(Gender::class,'gender_id');
     }
+    //the relationship student with nationalitie
+    public function nationalitie(){
+        return $this->belongsTo(Nationalitie::class,'nationalitie_id');
+    }
 }
