@@ -41,8 +41,8 @@ Route::group(
 
         Route::group(['namespace' => 'grade', 'prefix' => 'classroom'], function () {
             Route::get('/', 'ClassRoomController@index')->name('class.index');
-            Route::get('creat', 'ClassRoomController@create')->name('class.create');
-            Route::post('store', 'ClassRoomController@store')->name('class.store');
+            Route::get('create', 'ClassRoomController@create')->name('class.create');
+            Route::post('create', 'ClassRoomController@store')->name('class.store');
             Route::get('edit/{class_id}', 'ClassRoomController@edit')->name('class.edit');
             Route::post('update/{class_id}', 'ClassRoomController@update')->name('class.update');
             Route::get('destroy/{class_id}', 'ClassRoomController@destroy')->name('class.destroy');
@@ -52,8 +52,8 @@ Route::group(
 
         Route::group(['namespace' => 'teachers', 'prefix' => 'Teacher'], function () {
             Route::get('/', 'TeacherController@index')->name('teacher.index');
-            Route::get('creat', 'TeacherController@create')->name('teacher.create');
-            Route::post('store', 'TeacherController@store')->name('teacher.store');
+            Route::get('create', 'TeacherController@create')->name('teacher.create');
+            Route::post('create', 'TeacherController@store')->name('teacher.store');
             Route::get('edit/{Teacher_id}', 'TeacherController@edit')->name('teacher.edit');
             Route::post('update/{Teacher_id}', 'TeacherController@update')->name('teacher.update');
             Route::get('destroy/{Teacher_id}', 'TeacherController@destroy')->name('teacher.destroy');
@@ -61,8 +61,8 @@ Route::group(
 
         Route::group(['namespace' => 'students', 'prefix' => 'Students'], function () {
             Route::get('/', 'StudentController@index')->name('students.index');
-            Route::get('creat', 'StudentController@create')->name('students.create');
-            Route::post('store', 'StudentController@store')->name('students.store');
+            Route::get('create', 'StudentController@create')->name('students.create');
+            Route::post('create', 'StudentController@store')->name('students.store');
             Route::get('edit/{Student_id}', 'StudentController@edit')->name('students.edit');
             Route::post('update/{Student_id}', 'StudentController@update')->name('students.update');
             Route::get('destroy/{Student_id}', 'StudentController@destroy')->name('students.destroy');

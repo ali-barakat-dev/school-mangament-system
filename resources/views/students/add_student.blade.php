@@ -35,15 +35,15 @@
                     <div class="form-row">
                         <div class="col">
                             <label for="title">{{trans('my_parant.name_student_ar')}}</label>
-                            <input type="text" name="Name_student_ar" class="form-control" >
-                            @error('Name_student_ar')
+                            <input type="text" name="Name_ar" class="form-control" >
+                            @error('Name_ar')
                             <div class="alert alert-danger">{{ $message }}</div>
                             @enderror
                         </div>
                         <div class="col">
                             <label for="title">{{trans('my_parant.name_student_en')}}</label>
-                            <input type="text" name="name_student_en" class="form-control" >
-                            @error('name_student_en')
+                            <input type="text" name="Name_en" class="form-control" >
+                            @error('Name_en')
                             <div class="alert alert-danger">{{ $message }}</div>
                             @enderror
                         </div>
@@ -69,46 +69,46 @@
 
                       <div class="form-row">
                         <div class="form-group col">
-                            <label for="inputCity">{{trans('my_parant.gender_id')}}</label>
-                            <select class="custom-select my-1 mr-sm-2" name="gander_id">
+                            <label for="inputCity">{{trans('student.gender_id')}}</label>
+                            <select class="custom-select my-1 mr-sm-2" name="gender_id">
                                 <option selected>{{trans('my_parant.Choose')}}...</option>
                                 @foreach($Genders as $gander)
                                     <option value="{{$gander->id}}">{{$gander->Name}}</option>
                                 @endforeach 
                             </select>
-                            @error('Nationality_Father_id')
+                            @error('gender_id')
                             <div class="alert alert-danger">{{ $message }}</div>
                             @enderror
                         </div>
                         <div class="form-group col">
                             <label for="inputState">{{trans('students.National_id')}}</label>
-                            <select class="custom-select my-1 mr-sm-2" name="National_id">
+                            <select class="custom-select my-1 mr-sm-2" name="nationalitie_id">
                                 <option selected>{{trans('students.Choose')}}...</option>
                                  @foreach($Nationals as $National)
                                     <option value="{{$National->id}}">{{$National->Name}}</option>
                                 @endforeach 
                             </select>
-                            @error('National_id')
+                            @error('nationalitie_id')
                             <div class="alert alert-danger">{{ $message }}</div>
                             @enderror
                         </div>
                         <div class="form-group col">
-                            <label for="inputState">{{trans('my_parant.Blood_Type_Father_id')}}</label>
-                            <select class="custom-select my-1 mr-sm-2" name="Blood_Type_Father_id">
+                            <label for="inputState">{{trans('students.bload_id')}}</label>
+                            <select class="custom-select my-1 mr-sm-2" name="bload_id">
                                 <option selected>{{trans('my_parant.Choose')}}...</option>
                                  @foreach($bloods as $Type_Blood)
                                     <option value="{{$Type_Blood->id}}">{{$Type_Blood->Name}}</option>
                                 @endforeach
                             </select>
-                            @error('Blood_Type_Father_id')
+                            @error('bload_id')
                             <div class="alert alert-danger">{{ $message }}</div>
                             @enderror
                         </div>
                         <div class="form-group col">
                             <label for="inputZip">{{trans('student.birth')}}</label>
                             <br>
-                                <input type="date" name="birth"  class=" my-1 mr-sm-2">
-                            @error('birth')
+                                <input type="date" name="Date_Birth"  class=" my-1 mr-sm-2">
+                            @error('Date_Birth')
                             <div class="alert alert-danger">{{ $message }}</div>
                             @enderror
                         </div>
@@ -118,56 +118,72 @@
                     <div class="form-row">
                         <div class="form-group col">
                             <label for="inputCity">{{trans('student.grades')}}</label>
-                            <select class="custom-select my-1 mr-sm-2" name="student_grades">
+                            <select class="custom-select my-1 mr-sm-2" name="grade_id">
                                 <option selected>{{trans('student.Choose')}}...</option>
                                  @foreach($Grades as $grade)
-                                    <option value="{{$grade->id}}">{{$grade->Name}}</option>
+                                    <option value="{{$grade->id}}">{{$grade->name_ar}}</option>
                                 @endforeach 
                             </select>
-                            @error('student_grades')
+                            @error('grade_id')
                             <div class="alert alert-danger">{{ $message }}</div>
                             @enderror
                         </div>
                         <div class="form-group col">
                             <label for="inputState">{{trans('students.class_room')}}</label>
-                            <select class="custom-select my-1 mr-sm-2" name="class_room_id">
+                            <select class="custom-select my-1 mr-sm-2" name="classroom_id">
                                 <option selected>{{trans('my_parant.Choose')}}...</option>
                                  @foreach($my_class as $class)
-                                    <option value="{{$class->id}}">{{$class->Name}}</option>
+                                    <option value="{{$class->id}}">{{$class->name_class_ar}}</option>
                                 @endforeach
                             </select>
-                            @error('Blood_Type_Father_id')
+                            @error('classroom_id')
                             <div class="alert alert-danger">{{ $message }}</div>
                             @enderror
                         </div>
                         <div class="form-group col">
-                            <label for="inputZip">{{trans('my_parant.Religion_Father_id')}}</label>
-                            <select class="custom-select my-1 mr-sm-2" name="Religion_Father_id">
+                            <label for="inputZip">{{trans('my_parant.section_id')}}</label>
+                            <select class="custom-select my-1 mr-sm-2" name="section_id">
                                 <option selected>{{trans('my_parant.Choose')}}...</option>
                                 @foreach($sections as $section)
-                                    <option value="{{$section->id}}">{{$section->Name}}</option>
+                                    <option value="{{$section->id}}">{{$section->name_ar}}</option>
                                 @endforeach 
                             </select>
-                            @error('Religion_Father_id')
+                            @error('section_id')
                             <div class="alert alert-danger">{{ $message }}</div>
                             @enderror
                         </div>
                         <div class="form-group col">
-                            <label for="inputZip">{{trans('my_parant.Religion_Father_id')}}</label>
-                            <select class="custom-select my-1 mr-sm-2" name="Religion_Father_id">
+                            <label for="inputZip">{{trans('my_parant.parant_id')}}</label>
+                            <select class="custom-select my-1 mr-sm-2" name="parant_id">
                                 <option selected>{{trans('my_parant.Choose')}}...</option>
                                 @foreach($parants as $parant)
-                                    <option value="{{$parant->id}}">{{$parant->Name}}</option>
+                                    <option value="{{$parant->id}}">{{$parant->Name_Father}}</option>
                                 @endforeach 
                             </select>
-                            @error('Religion_Father_id')
+                            @error('parant_id')
+                            <div class="alert alert-danger">{{ $message }}</div>
+                            @enderror
+                        </div>
+                        <div class="form-group col">
+                            <label for="inputZip">{{trans('my_parant.academic_year')}}</label>
+                            <select class="custom-select my-1 mr-sm-2" name="academic_year">
+                                <option selected>{{trans('my_parant.Choose')}}...</option>
+                                {{-- @foreach($parants as $parant) --}}
+                                    <option value="2020">2020</option>
+                                {{-- @endforeach  --}}
+                            </select>
+                            @error('academic_year')
                             <div class="alert alert-danger">{{ $message }}</div>
                             @enderror
                         </div>
                     </div>
+                  
+                </div>
+                   <div>
                     <button class="btn btn-success btn-sm  btn-lg pull-right" 
-                            type="submit">{{trans('Parent_trans.Next')}}
-                    </button> 
+                    type="submit">{{trans('Parent_trans.Next')}}
+            </button> 
+                   </div>
                 </form>
             </div>
         </div>
