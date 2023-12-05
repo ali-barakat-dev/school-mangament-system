@@ -31,11 +31,11 @@ class GradController extends Controller
     }
     public function edit($grade_id)
     {
-        $grade = Grade::find($grade_id);
+        $grade = Grade::findOrfail($grade_id);
         Grade::select(['name_en', 'name_ar', 'procsess',]);
         return view('grade.edit_grade ', compact('grade'));
     }
-    function update(Request $request, $grade_id)
+    function update(GradeRequest $request, $grade_id)
     {
         $id = Grade::findOrfail($grade_id);
         if (!$id)
@@ -44,15 +44,14 @@ class GradController extends Controller
         $id->update($request->all());
         return redirect()->route('grad.index');
     }
-    function destroy(Request $request, $grade_id)
+    function destroy(GradeRequest $request)
     {
         $class_id = ClassRoom::where('grade_id', $request->id)->pluck('grade_id');
         if ($class_id->count() == 0) {
-
-            $grad = Grade::find($request->id)->delete();
+        Grade::find($request->id)->delete();
             return redirect()->route('grad.index');
         } else {
-           return 'error';
+            return redirect()->back()->withErrors($request);
         }
 
     }
