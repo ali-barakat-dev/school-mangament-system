@@ -47,6 +47,7 @@ class SectionController extends Controller
        return view('section.edit_section',compact('section','grades','classes'));
 
    }
+   
    function update(SectionRequest $request,$id){
    Section::findOrFail($id)->update($request->all());
     return redirect()->route('section.index');
