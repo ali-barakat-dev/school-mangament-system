@@ -27,7 +27,16 @@ Route::group(
 
         });
 
-        Route::group(['namespace' => 'grade', 'prefix' => 'sections'], function () {
+        Route::group(['namespace' => 'Class_Room', 'prefix' => 'ClassRoom'], function () {
+            Route::get('/', 'ClassRoomController@index')->name('class.index');
+            Route::get('create', 'ClassRoomController@create')->name('class.create');
+            Route::post('create', 'ClassRoomController@store')->name('class.store');
+            Route::get('edit/{class_id}', 'ClassRoomController@edit')->name('class.edit');
+            Route::post('update/{class_id}', 'ClassRoomController@update')->name('class.update');
+            Route::get('destroy/{class_id}', 'ClassRoomController@destroy')->name('class.destroy');
+        });
+
+        Route::group(['namespace' => 'Section', 'prefix' => 'Sections'], function () {
             Route::get('/', 'SectionController@index')->name('section.index');
             Route::get('create', 'SectionController@create')->name('section.create');
             Route::post('create', 'SectionController@store')->name('section.store');
@@ -37,20 +46,10 @@ Route::group(
            
             Route::get('classes{id}','SectionController@getclasses');
         });
-        
 
-        Route::group(['namespace' => 'grade', 'prefix' => 'classroom'], function () {
-            Route::get('/', 'ClassRoomController@index')->name('class.index');
-            Route::get('create', 'ClassRoomController@create')->name('class.create');
-            Route::post('create', 'ClassRoomController@store')->name('class.store');
-            Route::get('edit/{class_id}', 'ClassRoomController@edit')->name('class.edit');
-            Route::post('update/{class_id}', 'ClassRoomController@update')->name('class.update');
-            Route::get('destroy/{class_id}', 'ClassRoomController@destroy')->name('class.destroy');
-        });
+            Route::view('/Add_parent', 'livewire.show_form')->name('add.parent');
 
-        Route::view('/Add_parent', 'livewire.show_form')->name('add.parent');
-
-        Route::group(['namespace' => 'teachers', 'prefix' => 'Teacher'], function () {
+        Route::group(['namespace' => 'Teachers', 'prefix' => 'Teacher'], function () {
             Route::get('/', 'TeacherController@index')->name('teacher.index');
             Route::get('create', 'TeacherController@create')->name('teacher.create');
             Route::post('create', 'TeacherController@store')->name('teacher.store');
@@ -59,7 +58,7 @@ Route::group(
             Route::get('destroy/{Teacher_id}', 'TeacherController@destroy')->name('teacher.destroy');
         });
 
-        Route::group(['namespace' => 'students', 'prefix' => 'Students'], function () {
+        Route::group(['namespace' => 'Students', 'prefix' => 'Students'], function () {
             Route::get('/', 'StudentController@index')->name('students.index');
             Route::get('create', 'StudentController@create')->name('students.create');
             Route::post('create', 'StudentController@store')->name('students.store');
