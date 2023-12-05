@@ -25,8 +25,8 @@ class ClassRoomRequest extends FormRequest
     {
         return [
 
-            'name_class_ar' => 'required',
-            'name_class_en' => 'required',
+            'name_class_ar' => 'required|unique:class_rooms,name_class_ar,' . $this->id,
+            'name_class_en' => 'required|unique:class_rooms,name_class_en,' . $this->id,
             'grade_id' => 'required',
 
         ];
