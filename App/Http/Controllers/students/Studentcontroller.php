@@ -1,40 +1,46 @@
 <?php
 
-namespace App\Http\Controllers\students;
+namespace App\Http\Controllers\Students;
 use App\Http\Controllers\Controller;
+use App\Http\Requests\StudentRequest;
 use App\models\Student;
 use App\Repositry\StudentRepositry;
 use Illuminate\Http\Request;
 
 class StudentController extends Controller
 {
-    public $Student;
-    function __construct(StudentRepositry $Student)
+    public $student;
+    function __construct(StudentRepositry $student)
     {
-        $this->Student = $Student;
+        $this->student = $student;
     }
-    function index(){
-      return $this->Student->getAllStudents();
+    function index()
+    {
+      return $this->student->getAllStudent();
     }
+
     function create()
     {
-    return $this->Student->craetestudent();
-
+    return $this->student->craetestudent();
     }
-    function store(Request $request)
+
+    function store(StudentRequest $request)
     {
-
-    return $this->Student->StudentsStore($request);
-    }
-    function edit($id){
-    $Student=$this->Student->editStudents($id); 
-   
-      return view('teachers.edit_teacher',compact('Student'));
+    return $this->student->studentStore($request);
     }
 
-    function update(Request $request)
+    function edit($id)
     {
+     return $this->student->editStudent($id); 
+    }
 
-    return $this->Student->StudentsUpdate($request);
+    function update(StudentRequest $request)
+    {
+    return $this->student->studentsUpdate($request);
+    }
+
+    function destroy(StudentRequest $request)
+    {
+      return $this->student->deleteStudent($request);
     }
 }
