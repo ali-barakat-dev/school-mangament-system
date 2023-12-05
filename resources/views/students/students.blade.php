@@ -57,11 +57,11 @@ students
                     <td>{{$student->Section->name_ar}}</td>
                     
                     <td>
-                        <a class="btn btn-info btn-sm">
+                        <a class="btn btn-info btn-sm" href="{{route('students.edit',$student->id)}}">
                             <i class="fa fa-edit"></i>
                         </a>
                         
-                        <a class="btn btn-danger btn-sm" >
+                        <a class="btn btn-danger btn-sm"href="{{route('students.destroy',$student->id)}}" >
                             <i class="fa fa-trash"></i>
                         </a>
                     </td>
