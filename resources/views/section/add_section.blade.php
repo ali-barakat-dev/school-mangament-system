@@ -35,22 +35,27 @@
                     <input class="form-control form-control-lg" type="text" name="name_ar" 
                     placeholder="{{__('section.name_section_ar')}}" aria-label=".form-control-lg example">
                     @error('name_ar')
-                        {{$message}}
+                    <small class="form-text text-danger" >{{$message}}</small>
                     @enderror
                     <br>
                     <label for="">{{__('section.name_section_en')}}</label><br>
                     <input class="form-control form-control-md" type="text" name="name_en" 
                     placeholder="{{__('section.name_section_en')}}" aria-label=".form-control-lg example">
                     @error('name_en')
-                    {{$message}}
+                    <small class="form-text text-danger" >{{$message}}</small>
                 @enderror
                 <br>
                     <label >{{__('grades.name_grade_ar')}}</label>
                     <br>
               <select class="form-control form-control-lg"  name="grade_id" >
+                <option>--Select type--</option>
               @foreach ($grades as $grade)
               <option value="{{$grade->id}}">{{$grade->name_ar}}</option>
+              @error('grade_id')
+              <small class="form-text text-danger" >{{$message}}</small>
+              @enderror
               @endforeach
+             
                   <br>
                 </select>
                 <br>
@@ -59,10 +64,17 @@
                      @foreach ($classes as $class)
                     <option value="{{$class->id}}">{{$class->name_class_ar}}</option>
                     @endforeach 
+                    @error('grade_id')
+              <small class="form-text text-danger" >{{$message}}</small>
+              @enderror
                         <br>
+
                       </select>
                       <label>{{__('section.status')}}</label>
                       <input  class="form-control form-control-md" type="text" name="status">
+                      @error('status')
+              <small class="form-text text-danger" >{{$message}}</small>
+              @enderror
                     <br><br> <input type="submit" class="btn btn-dark" value="{{__('section.submit')}}">
                 </form>
             </div>
