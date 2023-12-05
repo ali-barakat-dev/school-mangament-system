@@ -78,7 +78,7 @@
 
                     <!-- menu item mailbox-->
                     <li>
-                        <a href="mail-box.html"><i class="fa fa-"></i><span class="right-nav-text"></span>{{__('mainpage.Exams')}}
+                        <a href="mail-box.html"><i class="fa fa-edit"></i><span class="right-nav-text"></span>{{__('mainpage.Exams')}}
                              </a>
                     </li>
                     <!-- menu item Charts-->
@@ -104,11 +104,11 @@
                             </li>
 
 
-                            <li> <a  href="chart-js.html"><i class="fa fa-user"></i><span class="right-nav-text"></span>{{__('mainpage.setings')}}</a></li>
+                            <li> <a  href="chart-js.html"><i class="fa fa-cog"></i><span class="right-nav-text"></span>{{__('mainpage.setings')}}</a></li>
                             
                     
                    
-                            <li> <a href="fontesome.html"><i class="fa fa-calendar-days"></i> {{__('mainpage.Absence')}}</a> </li>
+                            <li> <a href="fontesome.html"><i class="fa fa-check"></i> {{__('mainpage.Absence')}}</a> </li>
                        
 
                     
