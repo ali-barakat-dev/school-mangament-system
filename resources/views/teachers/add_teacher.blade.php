@@ -54,7 +54,7 @@
                             <div class="col">
                                 <label for="title">{{trans('Teacher.Name')}}</label>
                                 <input type="text" name="Name_ar" class="form-control" >
-                                @error('Name')
+                                @error('Name_ar')
                                 <div class="alert alert-danger">{{ $message }}</div>
                                 @enderror
                             </div>
