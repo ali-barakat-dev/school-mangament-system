@@ -1,6 +1,7 @@
 <?php
-namespace App\Http\Controllers\teachers;
+namespace App\Http\Controllers\Teachers;
 use App\Http\Controllers\Controller;
+use App\Http\Requests\TeacherRequest;
 use App\Repositry\TeacherRepositry;
 use Illuminate\Http\Request;
 
@@ -23,7 +24,7 @@ class TeacherController extends Controller
         return view('teachers.add_teacher',compact('gender','specialization'));
        
     }
-    function store(Request $request)
+    function store(TeacherRequest $request)
     {
 
     return $this->Teacher->TeacherStore($request);
@@ -35,12 +36,12 @@ class TeacherController extends Controller
       return view('teachers.edit_teacher',compact( 'gender','specialization','Teacher'));
     }
 
-    function update(Request $request)
+    function update(TeacherRequest $request)
     {
 
     return $this->Teacher->TeacherUpdate($request);
     }
-    function destroy(Request $request){
+    function destroy(TeacherRequest $request){
     return $this->Teacher->DeleteTeacher($request);
 
     }
