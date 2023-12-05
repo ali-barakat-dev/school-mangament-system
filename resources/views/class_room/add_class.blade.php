@@ -48,7 +48,6 @@
                      <label >{{__('grades.name_grade_ar')}}</label>
                      <br>
                      <select class="form-control form-control-lg"  name="grade_id" >
-                       <option value=" "></option>
                      @foreach ($grades as $grade)
                     <option value="{{$grade->id}}">{{$grade->name_ar}}</option>
                      @endforeach
